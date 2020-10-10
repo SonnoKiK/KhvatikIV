@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+//Функция проверки числа на простоту
+int is_simple(int number)
+{
+  if (number > 1)
+  {
+    for (int i = 2; i < number; i++)
+      if (number % i == 0) 
+      {
+        return 0;
+      }
+      return 1;
+  }
+    return 0;
+}
+
+//Функция возведения числа в степень
+long power(long number, long degree) 
+{
+    long result = 1;
+
+    for(long i = 0; i < degree; i++) 
+    {
+        result *= number;
+    }
+
+    return result;
+}
+
+int main(void) {
+  //FizzBuzz
+  for(int i = 1; i < 101; i++)
+  {
+    if(i % 3 == 0 && i % 5 == 0)
+    {
+      printf("FizzBuzz\n");
+    } 
+    else if(i % 3 == 0)
+    {
+      printf("Fizz\n");
+    }
+    else if(i % 5 == 0)
+    {
+      printf("Buzz\n");
+    }
+    else
+    {
+      printf("%d \n", i);
+    } 
+  }
+
+  return 0;
+}
